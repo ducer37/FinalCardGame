@@ -115,6 +115,8 @@ public class TienLenGameViewController implements Initializable /* , PhomGameVie
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadCardBackImage();
 
+        numberOfPlayers = logicController.getGameLogic().getCurrentGameState().getPlayers().size();
+
         playerCardAreas = new Pane[] { player1CardArea, player2CardArea, player3CardArea, player4CardArea };
 
         playerCardCountLabels = new Label[] {
