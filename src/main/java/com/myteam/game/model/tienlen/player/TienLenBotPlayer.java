@@ -14,10 +14,10 @@ public class TienLenBotPlayer extends TienLenPlayer {
     private final TienLenMienBacGameLogic gameLogic;
     private final BotStrategy strategy;
 
-    public TienLenBotPlayer(String name, TienLenMienBacGameLogic gameLogic, BotStrategy strategy) {
+    public TienLenBotPlayer(String name, BotStrategy strategy) {
         super(name);
         this.strategy = strategy;
-        this.gameLogic = gameLogic;
+        this.gameLogic = new TienLenMienBacGameLogic();
     }
 
     @Override

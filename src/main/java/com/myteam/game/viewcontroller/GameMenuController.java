@@ -31,6 +31,7 @@ import com.myteam.game.model.game.TienLenMienBacGameLogic;
 import com.myteam.game.model.phom.player.PhomBotPlayer;
 import com.myteam.game.model.phom.player.PhomHumanPlayer;
 import com.myteam.game.model.phom.player.PhomPlayer;
+import com.myteam.game.model.tienlen.botstrategy.GreedyStrategy;
 import com.myteam.game.model.tienlen.player.TienLenBotPlayer;
 import com.myteam.game.model.tienlen.player.TienLenHumanPlayer;
 import com.myteam.game.model.tienlen.player.TienLenPlayer;
@@ -245,10 +246,11 @@ public class GameMenuController implements Initializable {
         // 2. Tạo các thành phần Logic Game
         // Tạo người chơi (ví dụ)
         List<TienLenPlayer> players = new ArrayList<>();
+        GreedyStrategy strategy = new GreedyStrategy();
         players.add(new TienLenHumanPlayer("Player 1 (You)")); // Người chơi chính
-        players.add(new TienLenBotPlayer("Bot 1"));
-        players.add(new TienLenBotPlayer("Bot 2"));
-        players.add(new TienLenBotPlayer("Bot 3"));
+        players.add(new TienLenBotPlayer("Bot 1", strategy));
+        players.add(new TienLenBotPlayer("Bot 2", strategy));
+        players.add(new TienLenBotPlayer("Bot 3", strategy));
 
         StandardCardDeck<TienLenPlayer> deck = new StandardCardDeck<>(); // Bộ bài
         // Số lá bài ban đầu cho mỗi người (trừ người đầu tiên được thêm 1)
